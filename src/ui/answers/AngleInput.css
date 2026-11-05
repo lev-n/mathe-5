@@ -1,0 +1,20 @@
+/* Set an angle. Tap or step buttons, no drag; step buttons at least 48 px. Colours only from tokens.css. */
+.ang-input { display: flex; flex-direction: column; gap: var(--space-3); max-width: 100%; }
+.ang-input__help { margin: 0; font-size: var(--fs-small); color: var(--text-muted); }
+.ang-input__area { max-width: 100%; touch-action: manipulation; border-radius: var(--radius-s); cursor: pointer; }
+.ang-input__area.is-disabled { cursor: default; }
+.ang-input__area:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.ang-input__svg { user-select: none; -webkit-user-select: none; }
+.ang-input__controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.ang-input__steps { display: flex; gap: var(--space-2); }
+.ang-input__step {
+  min-width: 48px; min-height: 48px; padding: 0 var(--space-2);
+  border: 1px solid var(--border); border-radius: var(--radius-s);
+  background: var(--surface); color: var(--primary);
+  font-family: var(--font-mono); font-size: var(--fs-body); font-weight: var(--fw-medium);
+  cursor: pointer; touch-action: manipulation;
+}
+.ang-input__step:disabled { color: var(--text-muted); cursor: not-allowed; }
+.ang-input__status { margin: 0; font-weight: var(--fw-medium); }
+.ang-input__status--right, .ang-input__status--solution { color: var(--ok); }
+.ang-input__status--wrong { color: var(--retry); }
